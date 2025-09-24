@@ -311,7 +311,7 @@ export default function AdminDashboard() {
 
       <div className="flex">
         {/* Sidebar */}
-        <div className="w-64 bg-background border-r min-h-screen p-4">
+        <div className="w-full md:w-64 bg-background border-r md:min-h-screen p-4 md:block hidden">
           <nav className="space-y-2">
             {tabs.map((tab) => (
               <button
@@ -332,24 +332,24 @@ export default function AdminDashboard() {
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 p-6">
+        <div className="flex-1 p-4 md:p-6">
           {activeTab === "overview" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               <div className="bg-background p-6 rounded-xl border">
-                <h3 className="text-lg font-semibold mb-2">Total Services</h3>
-                <p className="text-3xl font-bold text-primary">{services.length}</p>
+                <h3 className="text-sm md:text-lg font-semibold mb-2">Services</h3>
+                <p className="text-2xl md:text-3xl font-bold text-primary">{services.length}</p>
               </div>
               <div className="bg-background p-6 rounded-xl border">
-                <h3 className="text-lg font-semibold mb-2">Testimonials</h3>
-                <p className="text-3xl font-bold text-primary">{testimonials.length}</p>
+                <h3 className="text-sm md:text-lg font-semibold mb-2">Reviews</h3>
+                <p className="text-2xl md:text-3xl font-bold text-primary">{testimonials.length}</p>
               </div>
               <div className="bg-background p-6 rounded-xl border">
-                <h3 className="text-lg font-semibold mb-2">Bookings</h3>
-                <p className="text-3xl font-bold text-primary">{bookings.length}</p>
+                <h3 className="text-sm md:text-lg font-semibold mb-2">Bookings</h3>
+                <p className="text-2xl md:text-3xl font-bold text-primary">{bookings.length}</p>
               </div>
               <div className="bg-background p-6 rounded-xl border">
-                <h3 className="text-lg font-semibold mb-2">Portfolio Items</h3>
-                <p className="text-3xl font-bold text-primary">{portfolio.length}</p>
+                <h3 className="text-sm md:text-lg font-semibold mb-2">Photos</h3>
+                <p className="text-2xl md:text-3xl font-bold text-primary">{portfolio.length}</p>
               </div>
             </div>
           )}
@@ -371,7 +371,7 @@ export default function AdminDashboard() {
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-2">
                         <h3 className="font-medium">{service.name}</h3>
-                        <span className="text-lg font-bold text-primary">${service.price?.toFixed(2) || '0.00'}</span>
+                        <span className="text-lg font-bold text-primary">${Number(service.price || 0).toFixed(2)}</span>
                       </div>
                       <p className="text-sm text-muted-foreground">{service.description}</p>
                     </div>

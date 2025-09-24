@@ -18,14 +18,14 @@ export default function Index() {
             <p className="uppercase tracking-widest text-xs/none mb-5 text-white/80">
               Photography Portfolio
             </p>
-            <h1 className="font-display text-5xl md:text-7xl tracking-tight leading-[0.95]">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl tracking-tight leading-[0.95]">
               Capturing Timeless Moments
             </h1>
-            <p className="mt-6 text-white/90 max-w-xl">
+            <p className="mt-4 md:mt-6 text-white/90 max-w-xl text-sm sm:text-base">
               Elegant portrait, lifestyle and wedding photography with an
               editorial touch.
             </p>
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-6 md:mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
               <Link
                 to="/portfolio"
                 className="inline-flex items-center justify-center rounded-full bg-white text-black px-6 py-3 text-sm font-semibold hover:bg-white/90 transition-colors"
@@ -46,11 +46,11 @@ export default function Index() {
       {/* Featured Work Grid */}
       <section className="py-20 bg-background">
         <div className="container">
-          <div className="flex items-end justify-between gap-6">
-            <h2 className="font-display text-3xl md:text-4xl">Featured Work</h2>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl">Featured Work</h2>
             <Link
               to="/portfolio"
-              className="text-sm underline-offset-4 hover:underline"
+              className="text-sm underline-offset-4 hover:underline self-start sm:self-auto"
             >
               See all
             </Link>
@@ -92,7 +92,7 @@ export default function Index() {
       <section id="about" className="py-24">
         <div className="container grid gap-10 md:grid-cols-2 items-center">
           <div className="order-2 md:order-1">
-            <h3 className="font-display text-3xl md:text-4xl">About Pixel Photography</h3>
+            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl">About Pixel Photography</h3>
             <p className="mt-4 text-muted-foreground max-w-prose">
               With a passion for storytelling and an eye for natural light, we
               craft images that feel effortless and refined. Our work blends
@@ -123,7 +123,7 @@ export default function Index() {
             <h2 className="font-display text-3xl md:text-4xl mb-4">What Clients Say</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">Real stories from couples and clients who trusted us with their most precious moments</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div className="group bg-background/80 backdrop-blur-sm p-8 rounded-3xl border border-foreground/10 hover:border-foreground/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
               <div className="text-4xl mb-4 text-primary/60">"</div>
               <p className="text-muted-foreground mb-6 leading-relaxed">Pixel Photography captured our wedding day perfectly. Every moment felt natural and beautiful.</p>
@@ -160,23 +160,25 @@ export default function Index() {
 
       {/* Contact CTA */}
       <section id="contact" className="py-24 bg-muted/40">
-        <div className="container grid gap-8 md:grid-cols-3 items-center">
-          <div className="md:col-span-2">
-            <h3 className="font-display text-3xl md:text-4xl">
+        <div className="container">
+          <div className="text-center md:text-left md:grid md:grid-cols-3 md:items-center gap-8">
+            <div className="md:col-span-2 mb-6 md:mb-0">
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl">
               Let’s create something beautiful
             </h3>
-            <p className="mt-3 text-muted-foreground max-w-prose">
+              <p className="mt-3 text-muted-foreground max-w-prose mx-auto md:mx-0">
               Now booking portraits, engagements, and weddings worldwide. Share
               your vision and I’ll tailor a session just for you.
             </p>
-          </div>
-          <div className="md:justify-self-end">
+            </div>
+            <div className="md:justify-self-end">
             <a
               href="mailto:hello@pixelphotography.com"
-              className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-6 py-3 text-sm font-semibold hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-4 sm:px-6 py-3 text-xs sm:text-sm font-semibold hover:opacity-90 transition-opacity"
             >
-              Email hello@pixelphotography.com
+              <span className="hidden sm:inline">Email </span>hello@pixelphotography.com
             </a>
+            </div>
           </div>
         </div>
       </section>

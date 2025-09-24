@@ -164,16 +164,16 @@ export default function About() {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Whether it's an intimate portrait session, a milestone celebration, or your dream wedding, we're here to capture your unique story with artistry and heart.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-8 py-4 font-semibold hover:bg-primary/90 transition-colors shadow-lg"
+              className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-semibold hover:bg-primary/90 transition-colors shadow-lg w-full sm:w-auto">
             >
               Book Your Session
             </Link>
             <a
               href="mailto:hello@pixelphotography.com"
-              className="inline-flex items-center justify-center rounded-full border border-primary text-primary px-8 py-4 font-semibold hover:bg-primary/10 transition-colors"
+              className="inline-flex items-center justify-center rounded-full border border-primary text-primary px-4 sm:px-8 py-3 sm:py-4 text-sm font-semibold hover:bg-primary/10 transition-colors w-full sm:w-auto break-all sm:break-normal"
             >
               hello@pixelphotography.com
             </a>
