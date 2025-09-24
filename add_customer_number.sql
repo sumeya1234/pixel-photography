@@ -1,0 +1,1 @@
+ALTER TABLE bookings ADD COLUMN customerNumber VARCHAR(50) UNIQUE;
