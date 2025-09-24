@@ -12,33 +12,33 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    --background: 210 40% 98%;
-    --foreground: 210 20% 15%;
+    --background: 0 0% 97%;
+    --foreground: 15 8% 35%;
 
-    --card: 210 30% 95%;
-    --card-foreground: 210 20% 15%;
+    --card: 30 25% 90%;
+    --card-foreground: 15 8% 35%;
 
-    --popover: 210 30% 95%;
-    --popover-foreground: 210 20% 15%;
+    --popover: 30 25% 90%;
+    --popover-foreground: 15 8% 35%;
 
-    --primary: 210 60% 75%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 15 8% 35%;
+    --primary-foreground: 0 0% 97%;
 
-    --secondary: 210 25% 90%;
-    --secondary-foreground: 210 20% 20%;
+    --secondary: 30 25% 90%;
+    --secondary-foreground: 15 8% 35%;
 
-    --muted: 210 20% 92%;
-    --muted-foreground: 210 15% 45%;
+    --muted: 30 25% 90%;
+    --muted-foreground: 15 8% 50%;
 
-    --accent: 210 35% 88%;
-    --accent-foreground: 210 20% 20%;
+    --accent: 30 25% 85%;
+    --accent-foreground: 15 8% 35%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 97%;
 
-    --border: 210 20% 85%;
-    --input: 210 20% 88%;
-    --ring: 210 60% 75%;
+    --border: 30 25% 85%;
+    --input: 30 25% 88%;
+    --ring: 15 8% 35%;
 
     --radius: 0.5rem;
 
@@ -60,33 +60,33 @@
   }
 
   .dark {
-    --background: 210 30% 8%;
-    --foreground: 210 20% 85%;
+    --background: 15 8% 12%;
+    --foreground: 30 25% 90%;
 
-    --card: 210 25% 12%;
-    --card-foreground: 210 20% 85%;
+    --card: 15 8% 18%;
+    --card-foreground: 30 25% 90%;
 
-    --popover: 210 25% 12%;
-    --popover-foreground: 210 20% 85%;
+    --popover: 15 8% 18%;
+    --popover-foreground: 30 25% 90%;
 
-    --primary: 210 50% 65%;
-    --primary-foreground: 210 30% 8%;
+    --primary: 30 25% 85%;
+    --primary-foreground: 15 8% 12%;
 
-    --secondary: 210 15% 18%;
-    --secondary-foreground: 210 20% 75%;
+    --secondary: 15 8% 25%;
+    --secondary-foreground: 30 25% 85%;
 
-    --muted: 210 15% 15%;
-    --muted-foreground: 210 10% 55%;
+    --muted: 15 8% 20%;
+    --muted-foreground: 30 15% 60%;
 
-    --accent: 210 20% 25%;
-    --accent-foreground: 210 20% 85%;
+    --accent: 15 8% 30%;
+    --accent-foreground: 30 25% 90%;
 
     --destructive: 0 62.8% 50%;
-    --destructive-foreground: 210 20% 85%;
+    --destructive-foreground: 30 25% 90%;
 
-    --border: 210 15% 20%;
-    --input: 210 15% 18%;
-    --ring: 210 50% 65%;
+    --border: 15 8% 25%;
+    --input: 15 8% 22%;
+    --ring: 30 25% 85%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
