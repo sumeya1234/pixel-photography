@@ -1,4 +1,4 @@
-j# Pixel Photography App
+Pixel Photography App
 
 Integrated photography portfolio application with Express backend and React frontend.
 
