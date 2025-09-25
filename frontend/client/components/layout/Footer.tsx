@@ -12,7 +12,7 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="font-semibold">Contact</h4>
-          <p className="text-sm mt-2">Email: hello@pixelphotography.com</p>
+          <p className="text-sm mt-2">Email: pixelphotography63@gmail.com</p>
           <p className="text-sm">Location: Worldwide</p>
         </div>
         <div>
