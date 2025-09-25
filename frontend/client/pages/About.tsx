@@ -168,7 +168,6 @@ export default function About() {
             <Link
               to="/contact"
               className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-sm font-semibold hover:bg-primary/90 transition-colors shadow-lg w-full sm:w-auto">
-            >
               Book Your Session
             </Link>
             <a
