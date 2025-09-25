@@ -173,10 +173,10 @@ export default function Index() {
             </div>
             <div className="md:justify-self-end">
             <a
-              href="mailto:hello@pixelphotography.com"
+              href="mailto: hello@pixelphotography.com"
               className="inline-flex items-center justify-center rounded-full bg-foreground text-background px-4 sm:px-6 py-3 text-xs sm:text-sm font-semibold hover:opacity-90 transition-opacity"
             >
-              <span className="hidden sm:inline">Email </span> pixelphotography63@gmail.com
+              <span className="hidden sm:inline">Email:</span> pixelphotography63@gmail.com
             </a>
             </div>
           </div>
