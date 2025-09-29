@@ -171,10 +171,10 @@ export default function About() {
               Book Your Session
             </Link>
             <a
-              href="mailto:hello@pixelphotography.com"
+              href="mailto:pixelphotography63@gmail.com"
               className="inline-flex items-center justify-center rounded-full border border-primary text-primary px-4 sm:px-8 py-3 sm:py-4 text-sm font-semibold hover:bg-primary/10 transition-colors w-full sm:w-auto break-all sm:break-normal"
             >
-              hello@pixelphotography.com
+              pixelphotography63@gmail.com
             </a>
           </div>
         </div>
