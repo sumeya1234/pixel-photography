@@ -18,8 +18,21 @@ const createBooking = async (req, res) => {
     try {
       await sendEmail(
         email,
-        "Booking Confirmation",
-        `Hello ${name},\n\nYour booking for ${sessionDate} from ${startTime} to ${endTime} has been confirmed.\nService ID: ${serviceId}\n\nThank you!`
+        "Booking Confirmation - Pixel Photography",
+        `Dear ${name},
+
+We are pleased to confirm your photography session. Please find the details below:
+
+📅 Date: ${new Date(sessionDate).toLocaleDateString()}
+🕒 Time: ${startTime} - ${endTime}
+🔖 Service ID: ${serviceId}
+
+If you have any questions or would like to make changes, please contact us at pixelphotography63@gmail.com.
+
+Thank you for choosing Pixel Photography. We look forward to capturing your moments.
+
+Best regards,
+Pixel Photography Team`
       );
     } catch (error) {
       console.error("Error sending email:", error);
@@ -48,41 +61,40 @@ const getBookings = (req, res) => {
 
 // Update booking
 const updateBooking = (req, res) => {
-  console.log("=== UPDATE BOOKING FUNCTION CALLED ===");
   const { id } = req.params;
-  console.log("Update booking request for ID:", id);
-  console.log("Update data:", req.body);
-  
+
   Booking.updateBooking(id, req.body, async (err, result) => {
     if (err) {
       console.error("Error updating booking:", err);
       return res.status(500).json({ message: "Error updating booking: " + err.message });
     }
     if (result.affectedRows === 0) {
-      console.log("No booking found with ID:", id);
       return res.status(404).json({ message: "Booking not found" });
     }
-    
+
     // Send update notification email
     try {
       const { name, email, sessionDate, startTime, endTime } = req.body;
-      console.log("Preparing to send email to:", email);
-      console.log("Email config check:", {
-        EMAIL_USER: process.env.EMAIL_USER ? "Set" : "Missing",
-        EMAIL_PASS: process.env.EMAIL_PASS ? "Set" : "Missing"
-      });
-      
-      const emailResult = await sendEmail(
+
+      await sendEmail(
         email,
         "Booking Update Confirmation - Pixel Photography",
-        `Dear ${name},\n\nYour photography session has been updated with the following details:\n\nDate: ${new Date(sessionDate).toLocaleDateString()}\nTime: ${startTime} - ${endTime}\n\nIf you have any questions, please contact us.\n\nBest regards,\nPixel Photography Team`
+        `Dear ${name},
+
+Your booking has been successfully updated. Please find the revised details below:
+
+📅 Date: ${new Date(sessionDate).toLocaleDateString()}
+🕒 Time: ${startTime} - ${endTime}
+
+If this update does not match your request, or if you need further assistance, please contact us at pixelphotography63@gmail.com.
+
+Best regards,
+Pixel Photography Team`
       );
-      console.log("Email sent successfully:", emailResult.messageId);
     } catch (emailError) {
       console.error("Error sending update email:", emailError.message);
-      console.error("Full email error:", emailError);
     }
-    
+
     res.json({ message: "Booking updated successfully and customer notified" });
   });
 };
@@ -90,20 +102,16 @@ const updateBooking = (req, res) => {
 // Delete booking
 const deleteBooking = async (req, res) => {
   const { id } = req.params;
-  console.log("Delete booking request for ID:", id);
-  
-  // First get booking details for email
+
+  // Get booking details first
   Booking.getBookingById(id, async (err, booking) => {
     if (err) {
       console.error("Error getting booking:", err);
       return res.status(500).json({ message: "Database error" });
     }
     if (!booking) {
-      console.log("Booking not found for ID:", id);
       return res.status(404).json({ message: "Booking not found" });
     }
-
-    console.log("Found booking:", booking);
 
     // Delete the booking
     Booking.deleteBooking(id, async (deleteErr, result) => {
@@ -112,20 +120,28 @@ const deleteBooking = async (req, res) => {
         return res.status(500).json({ message: "Error deleting booking" });
       }
       if (result.affectedRows === 0) {
-        console.log("No rows affected when deleting booking ID:", id);
         return res.status(404).json({ message: "Booking not found" });
       }
-
-      console.log("Booking deleted successfully, sending email...");
 
       // Send cancellation email
       try {
         await sendEmail(
           booking.email,
           "Booking Cancellation - Pixel Photography",
-          `Dear ${booking.name},\n\nWe regret to inform you that your photography session scheduled for ${booking.sessionDate} from ${booking.startTime} to ${booking.endTime} has been cancelled.\n\nIf you have any questions or would like to reschedule, please contact us.\n\nWe apologize for any inconvenience.\n\nBest regards,\nPixel Photography Team`
+          `Dear ${booking.name},
+
+We regret to inform you that your photography session has been cancelled. The cancelled session details are:
+
+📅 Date: ${new Date(booking.sessionDate).toLocaleDateString()}
+🕒 Time: ${booking.startTime} - ${booking.endTime}
+
+If this cancellation was made in error or if you would like to reschedule, please contact us at pixelphotography63@gmail.com.
+
+We apologize for any inconvenience caused and hope to assist you soon.
+
+Best regards,
+Pixel Photography Team`
         );
-        console.log("Cancellation email sent successfully");
       } catch (emailError) {
         console.error("Error sending cancellation email:", emailError);
       }
